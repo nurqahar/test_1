@@ -4,7 +4,7 @@ set -o pipefail
 
 # Get the Vercel API endpoints.
 GET_DEPLOYMENTS_ENDPOINT="https://api.vercel.com/v6/deployments"
-DELETE_DEPLOYMENTS_ENDPOINT=""
+DELETE_DEPLOYMENTS_ENDPOINT="https://api.vercel.com/v13/deployments"
 
 #Create a list of deployments.
 deployments=$(curl -s -X GET "$GET_DEPLOYMENTS_ENDPOINT/?projectId=$VERCEL_PROJECT_ID&teamId=$VERCEL_ORG_ID" -H "Authorization: Bearer$VERCEL_TOKEN")
